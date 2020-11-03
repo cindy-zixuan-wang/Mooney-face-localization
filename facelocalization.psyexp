@@ -103,7 +103,7 @@
       <CodeComponent name="code_3">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="var imageIndex;&amp;#10;var imageName;&amp;#10;" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;&amp;#10;imageName = &quot;stim/&quot;+imageIndex+&quot;.bmp&quot;;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;&amp;#10;imageName = imageIndex+&quot;.bmp&quot;;" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
@@ -295,10 +295,10 @@
     <Routine name="Pause_1">
       <CodeComponent name="code_2">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="window.runCount = 0;&amp;#10;var breakTrial = 98;" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="if (trialNum%breakTrial != 0) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;window.runCount += 1;&amp;#10;&amp;#10;if (window.runCount &lt; 8) {&amp;#10;    RestMessage = &quot;You have finished Block &quot; + window.runCount.toString() +&quot; out of 8 \n Feel free to take a break and PLEASE DON'T PRESS THE ESCAPE KEY OR EXIT FULL SCREEN. \n\n Hit the spacebar to continue. \n\n Please keep looking at the center of your screen in advance&quot;;&amp;#10;} else {&amp;#10;    RestMessage = &quot;You have finished the experiment, please hit the spacebar to get further instruction&quot;;&amp;#10;}&amp;#10;text_6.text = RestMessage;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="window.runCount = 0;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="var breakTrial = 98;&amp;#10;if (trialNum % breakTrial != 0) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;window.runCount += 1;&amp;#10;&amp;#10;if (window.runCount &lt; 8) {&amp;#10;    RestMessage = &quot;You have finished Block &quot; + window.runCount.toString() +&quot; out of 8 \n Feel free to take a break and PLEASE DON'T PRESS THE ESCAPE KEY OR EXIT FULL SCREEN. \n\n Hit the spacebar to continue. \n\n Please keep looking at the center of your screen in advance&quot;;&amp;#10;} else {&amp;#10;    RestMessage = &quot;You have finished the experiment, please hit the spacebar to get further instruction&quot;;&amp;#10;}&amp;#10;text_6.text = RestMessage;" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>

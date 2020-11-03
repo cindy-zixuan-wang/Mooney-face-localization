@@ -422,7 +422,6 @@ function experimentInit() {
   // Initialize components for Routine "Pause_1"
   Pause_1Clock = new util.Clock();
   window.runCount = 0;
-  var breakTrial = 98;
   text_6 = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_6',
@@ -1813,7 +1812,7 @@ function trialRoutineBegin(trials) {
     mouse.time = [];
     gotValidClick = false; // until a click is received
     imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
-    imageName = "stim/"+imageIndex+".bmp";
+    imageName = imageIndex+".bmp";
     // keep track of which components have finished
     trialComponents = [];
     trialComponents.push(image);
@@ -1953,7 +1952,8 @@ function Pause_1RoutineBegin(trials) {
     Pause_1Clock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    if (trialNum%breakTrial != 0) {
+    var breakTrial = 98;
+    if (trialNum % breakTrial != 0) {
         continueRoutine = false;
     }
     window.runCount += 1;
