@@ -1954,7 +1954,7 @@ function Pause_1RoutineBegin(trials) {
     // update component parameters for each repeat
     var breakTrial = 98;
     if (trialNum % breakTrial != 0) {
-        continueRoutine = false;
+         return Scheduler.Event.NEXT;
     }
     window.runCount += 1;
     

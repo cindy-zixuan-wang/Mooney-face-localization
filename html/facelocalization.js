@@ -1795,8 +1795,6 @@ function trialRoutineBegin(trials) {
     trialClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
-    imageName = imageIndex+".bmp";
     image.setPos([coex, coey]);
     image.setImage(imageName);
     // setup some python lists for storing info about the mouse
@@ -1808,6 +1806,8 @@ function trialRoutineBegin(trials) {
     mouse.rightButton = [];
     mouse.time = [];
     gotValidClick = false; // until a click is received
+    imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
+    imageName = imageIndex+".bmp";
     // keep track of which components have finished
     trialComponents = [];
     trialComponents.push(image);
@@ -1948,7 +1948,7 @@ function Pause_1RoutineBegin(trials) {
     // update component parameters for each repeat
     var breakTrial = 98;
     if (trialNum % breakTrial != 0) {
-        continueRoutine = false;
+         return Scheduler.Event.NEXT;
     }
     window.runCount += 1;
     
