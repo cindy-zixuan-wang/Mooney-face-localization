@@ -240,7 +240,7 @@ function experimentInit() {
   //var allTrials = fillArray(uniqCond,rep);
   //shuffleArray(allTrials);
   
-  var trialNum = 0;
+  window.trialCount = 0
   // Initialize components for Routine "Intro"
   IntroClock = new util.Clock();
   text_2 = new visual.TextStim({
@@ -1794,9 +1794,9 @@ function trialRoutineBegin(trials) {
     t = 0;
     trialClock.reset(); // clock
     frameN = -1;
+    // update component parameters for each repeat
     imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
     imageName = imageIndex+".bmp";
-    // update component parameters for each repeat
     image.setPos([coex, coey]);
     image.setImage(imageName);
     // setup some python lists for storing info about the mouse
@@ -1911,7 +1911,6 @@ function trialRoutineEachFrame(trials) {
 }
 
 
-var trialNum;
 function trialRoutineEnd(trials) {
   return function () {
     //------Ending Routine 'trial'-------
@@ -1928,7 +1927,7 @@ function trialRoutineEnd(trials) {
     if (mouse.rightButton) {  psychoJS.experiment.addData('mouse.rightButton', mouse.rightButton[0])};
     if (mouse.time) {  psychoJS.experiment.addData('mouse.time', mouse.time[0])};
     
-    trialNum = trialNum + 1;
+    window.trialCount += 1;
     psychoJS.experiment.addData('imageNum', imageIndex);
     // the Routine "trial" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
@@ -1982,7 +1981,7 @@ function Pause_1RoutineEachFrame(trials) {
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     var breakTrial = 5;
-    if (trialNum % breakTrial != 0) {
+    if (window.trialCount % breakTrial != 0) {
         continueRoutine = false;
         frameN = -1
     }
