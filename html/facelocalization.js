@@ -1946,10 +1946,6 @@ function Pause_1RoutineBegin(trials) {
     Pause_1Clock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    var breakTrial = 98;
-    if (trialNum % breakTrial != 0) {
-         return Scheduler.Event.NEXT;
-    }
     window.runCount += 1;
     
     if (window.runCount < 8) {
@@ -1983,6 +1979,11 @@ function Pause_1RoutineEachFrame(trials) {
     t = Pause_1Clock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
+    var breakTrial = 98;
+    if (trialNum % breakTrial != 0) {
+        continueRoutine = false;
+        frameN = -1
+    }
     
     // *text_6* updates
     if (frameN >= 0.0 && text_6.status === PsychoJS.Status.NOT_STARTED) {
