@@ -1794,6 +1794,8 @@ function trialRoutineBegin(trials) {
     t = 0;
     trialClock.reset(); // clock
     frameN = -1;
+    imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
+    imageName = imageIndex+".bmp";
     // update component parameters for each repeat
     image.setPos([coex, coey]);
     image.setImage(imageName);
@@ -1979,7 +1981,7 @@ function Pause_1RoutineEachFrame(trials) {
     t = Pause_1Clock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    var breakTrial = 98;
+    var breakTrial = 5;
     if (trialNum % breakTrial != 0) {
         continueRoutine = false;
         frameN = -1

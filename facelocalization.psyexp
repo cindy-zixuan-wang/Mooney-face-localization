@@ -105,7 +105,7 @@
         <Param name="Begin JS Experiment" updates="constant" val="var imageIndex;&amp;#10;var imageName;&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;&amp;#10;imageName = imageIndex+&quot;.bmp&quot;;" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="if (frameN &lt; 63) {&amp;#10;    document.body.style.cursor='none';&amp;#10;} else {&amp;#10;    document.body.style.cursor='auto';&amp;#10;}&amp;#10;" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -300,7 +300,7 @@
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="var breakTrial = 98;&amp;#10;if (trialNum % breakTrial != 0) {&amp;#10;    continueRoutine = false;&amp;#10;    frameN = -1&amp;#10;}" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="var breakTrial = 5;&amp;#10;if (trialNum % breakTrial != 0) {&amp;#10;    continueRoutine = false;&amp;#10;    frameN = -1&amp;#10;}" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>

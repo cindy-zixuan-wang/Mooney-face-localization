@@ -1986,7 +1986,7 @@ function Pause_1RoutineEachFrame(trials) {
     t = Pause_1Clock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    var breakTrial = 98;
+    var breakTrial = 5;
     if (trialNum % breakTrial != 0) {
         continueRoutine = false;
         frameN = -1
