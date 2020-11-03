@@ -1434,7 +1434,7 @@ function exampleRoutineBegin(trials) {
     frameN = -1;
     // update component parameters for each repeat
     image_2.setPos([coex, coey]);
-    image_2.setImage(image);
+    image_2.setImage(imageFile);
     // setup some python lists for storing info about the mouse_2
     // current position of the mouse:
     mouse_2.x = [];
