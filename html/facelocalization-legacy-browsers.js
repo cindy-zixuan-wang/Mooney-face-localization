@@ -233,6 +233,7 @@ function experimentInit() {
   //shuffleArray(allTrials);
   
   window.trialCount = 0
+  window.runCount = 0;
   // Initialize components for Routine "Intro"
   IntroClock = new util.Clock();
   text_2 = new visual.TextStim({
@@ -421,7 +422,6 @@ function experimentInit() {
   mouse_4.mouseClock = new util.Clock();
   // Initialize components for Routine "Pause_1"
   Pause_1Clock = new util.Clock();
-  window.runCount = 0;
   text_6 = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_6',
@@ -1951,7 +1951,11 @@ function Pause_1RoutineBegin(trials) {
     Pause_1Clock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    window.runCount += 1;
+    var breakTrial = 5;
+    if (window.trialCount % breakTrial == 0) {
+        window.runCount += 1;
+    }
+    
     
     if (window.runCount < 8) {
         RestMessage = "You have finished Block " + window.runCount.toString() +" out of 8 \n Feel free to take a break and PLEASE DON'T PRESS THE ESCAPE KEY OR EXIT FULL SCREEN. \n\n Hit the spacebar to continue. \n\n Please keep looking at the center of your screen in advance";

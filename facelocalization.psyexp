@@ -105,7 +105,7 @@
         <Param name="Begin JS Experiment" updates="constant" val="var imageIndex;&amp;#10;var imageName;&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;&amp;#10;imageName = imageIndex+&quot;.bmp&quot;;" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="if (frameN &lt; 63) {&amp;#10;    document.body.style.cursor='none';&amp;#10;} else {&amp;#10;    document.body.style.cursor='auto';&amp;#10;}&amp;#10;" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -295,10 +295,10 @@
     <Routine name="Pause_1">
       <CodeComponent name="code_2">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="window.runCount = 0;" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="window.runCount += 1;&amp;#10;&amp;#10;if (window.runCount &lt; 8) {&amp;#10;    RestMessage = &quot;You have finished Block &quot; + window.runCount.toString() +&quot; out of 8 \n Feel free to take a break and PLEASE DON'T PRESS THE ESCAPE KEY OR EXIT FULL SCREEN. \n\n Hit the spacebar to continue. \n\n Please keep looking at the center of your screen in advance&quot;;&amp;#10;} else {&amp;#10;    RestMessage = &quot;You have finished the experiment, please hit the spacebar to get further instruction&quot;;&amp;#10;}&amp;#10;text_6.text = RestMessage;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="var breakTrial = 5;&amp;#10;if (window.trialCount % breakTrial == 0) {&amp;#10;    window.runCount += 1;&amp;#10;}&amp;#10;&amp;#10;&amp;#10;if (window.runCount &lt; 8) {&amp;#10;    RestMessage = &quot;You have finished Block &quot; + window.runCount.toString() +&quot; out of 8 \n Feel free to take a break and PLEASE DON'T PRESS THE ESCAPE KEY OR EXIT FULL SCREEN. \n\n Hit the spacebar to continue. \n\n Please keep looking at the center of your screen in advance&quot;;&amp;#10;} else {&amp;#10;    RestMessage = &quot;You have finished the experiment, please hit the spacebar to get further instruction&quot;;&amp;#10;}&amp;#10;text_6.text = RestMessage;" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="var breakTrial = 5;&amp;#10;if (window.trialCount % breakTrial != 0) {&amp;#10;    continueRoutine = false;&amp;#10;    frameN = -1&amp;#10;}" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
@@ -969,7 +969,7 @@
       </KeyboardComponent>
       <CodeComponent name="stimuli_set">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="//function fillArray(origArr, len) {&amp;#10;//  var arr = [];&amp;#10;//  for (var i = 0; i &lt; len; i++) {&amp;#10;//    for (var j = 0; j &lt; origArr.length; j++) {&amp;#10;//        arr.push(origArr[j]);&amp;#10;//    }&amp;#10;//  }&amp;#10;//  return arr;&amp;#10;//}&amp;#10;//&amp;#10;//function shuffleArray(array) {&amp;#10;//    for (var i = array.length - 1; i &gt; 0; i--) {&amp;#10;//        var j = Math.floor(Math.random() * (i + 1));&amp;#10;//        var temp = array[i];&amp;#10;//        array[i] = array[j];&amp;#10;//        array[j] = temp;&amp;#10;//    }&amp;#10;//}&amp;#10;&amp;#10;//upright-low-female: 1-4;&amp;#10;//upright-low-male: 5-8;&amp;#10;//upright-high-female: 9-12;&amp;#10;//upright-high-male: 13-16;&amp;#10;//invert-low-female: 17-20;&amp;#10;//invert-low-male: 21-24;&amp;#10;//invert-high-female: 25-28;&amp;#10;//invert-high-male: 29-32;&amp;#10;&amp;#10;//var uniqCond = [1,2,3,4,5,6,7,8];&amp;#10;//var rep = 2*48;&amp;#10;//var allTrials = fillArray(uniqCond,rep);&amp;#10;//shuffleArray(allTrials);&amp;#10;&amp;#10;window.trialCount = 0" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="//function fillArray(origArr, len) {&amp;#10;//  var arr = [];&amp;#10;//  for (var i = 0; i &lt; len; i++) {&amp;#10;//    for (var j = 0; j &lt; origArr.length; j++) {&amp;#10;//        arr.push(origArr[j]);&amp;#10;//    }&amp;#10;//  }&amp;#10;//  return arr;&amp;#10;//}&amp;#10;//&amp;#10;//function shuffleArray(array) {&amp;#10;//    for (var i = array.length - 1; i &gt; 0; i--) {&amp;#10;//        var j = Math.floor(Math.random() * (i + 1));&amp;#10;//        var temp = array[i];&amp;#10;//        array[i] = array[j];&amp;#10;//        array[j] = temp;&amp;#10;//    }&amp;#10;//}&amp;#10;&amp;#10;//upright-low-female: 1-4;&amp;#10;//upright-low-male: 5-8;&amp;#10;//upright-high-female: 9-12;&amp;#10;//upright-high-male: 13-16;&amp;#10;//invert-low-female: 17-20;&amp;#10;//invert-low-male: 21-24;&amp;#10;//invert-high-female: 25-28;&amp;#10;//invert-high-male: 29-32;&amp;#10;&amp;#10;//var uniqCond = [1,2,3,4,5,6,7,8];&amp;#10;//var rep = 2*48;&amp;#10;//var allTrials = fillArray(uniqCond,rep);&amp;#10;//shuffleArray(allTrials);&amp;#10;&amp;#10;window.trialCount = 0&amp;#10;window.runCount = 0;" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="JS" valType="str"/>
