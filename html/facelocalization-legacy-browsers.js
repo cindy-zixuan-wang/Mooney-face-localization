@@ -1951,7 +1951,7 @@ function Pause_1RoutineBegin(trials) {
     Pause_1Clock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    var breakTrial = 5;
+    var breakTrial = 96;
     if (window.trialCount % breakTrial == 0) {
         window.runCount += 1;
     }
@@ -1989,7 +1989,7 @@ function Pause_1RoutineEachFrame(trials) {
     t = Pause_1Clock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    var breakTrial = 5;
+    var breakTrial = 96;
     if (window.trialCount % breakTrial != 0) {
         continueRoutine = false;
         frameN = -1
