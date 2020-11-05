@@ -13,7 +13,7 @@ function gaussAperture(image,gaussSD,outputName,outputSize)
     xx = linspace(-size(imNew,1)/2,size(imNew,1)/2,size(imNew,1));
     [x,y] = meshgrid(xx);
     gauss = exp(-(x.^2+y.^2)./(2*gaussSD^2));
-    for layer = 1:3
+    for layer = 1:size(imNew,3)
         imNew(:,:,layer) = 128+imNew(:,:,layer).*gauss*0.5;
     end
     imwrite(uint8(imNew),outputName,'png');

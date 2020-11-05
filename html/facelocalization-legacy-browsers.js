@@ -135,6 +135,7 @@ var image_5;
 var backtocenterClock;
 var image_4;
 var mouse_4;
+var image_8;
 var startClock;
 var text_8;
 var key_resp_6;
@@ -353,8 +354,8 @@ function experimentInit() {
   image_4 = new visual.ImageStim({
     win : psychoJS.window,
     name : 'image_4', units : undefined, 
-    image : 'target.png', mask : undefined,
-    ori : 0, pos : [0, 0], size : [0.1, 0.1],
+    image : 'F.png', mask : undefined,
+    ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -363,6 +364,15 @@ function experimentInit() {
     win: psychoJS.window,
   });
   mouse_4.mouseClock = new util.Clock();
+  image_8 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image_8', units : undefined, 
+    image : 'M.png', mask : undefined,
+    ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
+    color : new util.Color([1, 1, 1]), opacity : 1,
+    flipHoriz : false, flipVert : false,
+    texRes : 128, interpolate : true, depth : -2.0 
+  });
   // Initialize components for Routine "start"
   startClock = new util.Clock();
   text_8 = new visual.TextStim({
@@ -410,8 +420,8 @@ function experimentInit() {
   image_4 = new visual.ImageStim({
     win : psychoJS.window,
     name : 'image_4', units : undefined, 
-    image : 'target.png', mask : undefined,
-    ori : 0, pos : [0, 0], size : [0.1, 0.1],
+    image : 'F.png', mask : undefined,
+    ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -420,6 +430,15 @@ function experimentInit() {
     win: psychoJS.window,
   });
   mouse_4.mouseClock = new util.Clock();
+  image_8 = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'image_8', units : undefined, 
+    image : 'M.png', mask : undefined,
+    ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
+    color : new util.Color([1, 1, 1]), opacity : 1,
+    flipHoriz : false, flipVert : false,
+    texRes : 128, interpolate : true, depth : -2.0 
+  });
   // Initialize components for Routine "Pause_1"
   Pause_1Clock = new util.Clock();
   text_6 = new visual.TextStim({
@@ -1582,10 +1601,12 @@ function backtocenterRoutineBegin(trials) {
     // setup some python lists for storing info about the mouse_4
     mouse_4.clicked_name = [];
     gotValidClick = false; // until a click is received
+    mouse_4.mouseClock.reset();
     // keep track of which components have finished
     backtocenterComponents = [];
     backtocenterComponents.push(image_4);
     backtocenterComponents.push(mouse_4);
+    backtocenterComponents.push(image_8);
     
     backtocenterComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -1622,7 +1643,6 @@ function backtocenterRoutineEachFrame(trials) {
       mouse_4.frameNStart = frameN;  // exact frame index
       
       mouse_4.status = PsychoJS.Status.STARTED;
-      mouse_4.mouseClock.reset();
       prevButtonState = mouse_4.getPressed();  // if button is down already this ISN'T a new click
       }
     if (mouse_4.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
@@ -1632,7 +1652,7 @@ function backtocenterRoutineEachFrame(trials) {
         if (buttons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
           // check if the mouse was inside our 'clickable' objects
           gotValidClick = false;
-          for (const obj of [image_4]) {
+          for (const obj of [image_4,image_8]) {
             if (obj.contains(mouse_4)) {
               gotValidClick = true;
               mouse_4.clicked_name.push(obj.name)
@@ -1644,6 +1664,16 @@ function backtocenterRoutineEachFrame(trials) {
         }
       }
     }
+    
+    // *image_8* updates
+    if (t >= 0.0 && image_8.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      image_8.tStart = t;  // (not accounting for frame time here)
+      image_8.frameNStart = frameN;  // exact frame index
+      
+      image_8.setAutoDraw(true);
+    }
+
     // check if the Routine should terminate
     if (!continueRoutine) {  // a component has requested a forced-end of Routine
       return Scheduler.Event.NEXT;
@@ -1675,6 +1705,15 @@ function backtocenterRoutineEnd(trials) {
       }
     });
     // store data for thisExp (ExperimentHandler)
+    const xys = mouse_4.getPos();
+    const buttons = mouse_4.getPressed();
+    psychoJS.experiment.addData('mouse_4.x', xys[0]);
+    psychoJS.experiment.addData('mouse_4.y', xys[1]);
+    psychoJS.experiment.addData('mouse_4.leftButton', buttons[0]);
+    psychoJS.experiment.addData('mouse_4.midButton', buttons[1]);
+    psychoJS.experiment.addData('mouse_4.rightButton', buttons[2]);
+    if (mouse_4.clicked_name.length > 0) {
+      psychoJS.experiment.addData('mouse_4.clicked_name', mouse_4.clicked_name[0]);}
     // the Routine "backtocenter" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
