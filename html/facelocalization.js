@@ -364,7 +364,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_4', units : undefined, 
     image : 'F.png', mask : undefined,
-    ori : 0, pos : [(- 0.1), 0], size : [0.1, 0.1],
+    ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -377,7 +377,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_8', units : undefined, 
     image : 'M.png', mask : undefined,
-    ori : 0, pos : [0.1, 0], size : [0.1, 0.1],
+    ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : -2.0 
@@ -439,7 +439,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_4', units : undefined, 
     image : 'F.png', mask : undefined,
-    ori : 0, pos : [(- 0.1), 0], size : [0.1, 0.1],
+    ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -452,7 +452,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_8', units : undefined, 
     image : 'M.png', mask : undefined,
-    ori : 0, pos : [0.1, 0], size : [0.1, 0.1],
+    ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : -2.0 
