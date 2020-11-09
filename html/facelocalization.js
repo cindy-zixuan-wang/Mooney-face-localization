@@ -1833,11 +1833,11 @@ function trialRoutineBegin(trials) {
     t = 0;
     trialClock.reset(); // clock
     frameN = -1;
+    imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
+    imageName = imageIndex+".bmp";
     // update component parameters for each repeat
     image.setPos([coex, coey]);
     image.setImage(imageName);
-    imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
-    imageName = imageIndex+".bmp";
     // setup some python lists for storing info about the mouse
     // current position of the mouse:
     mouse.x = [];
@@ -1847,8 +1847,7 @@ function trialRoutineBegin(trials) {
     mouse.rightButton = [];
     mouse.time = [];
     gotValidClick = false; // until a click is received
-    imageIndex = Math.floor(Math.random() * 4+1)+(cond-1)*4;
-    imageName = imageIndex+".bmp";
+
     // keep track of which components have finished
     trialComponents = [];
     trialComponents.push(image);
