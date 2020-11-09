@@ -136,6 +136,7 @@ var backtocenterClock;
 var image_4;
 var mouse_4;
 var image_8;
+var fix_gender_task;
 var startClock;
 var text_8;
 var key_resp_6;
@@ -331,7 +332,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_2', units : 'height', 
     image : undefined, mask : undefined,
-    ori : 0, pos : [0, 0], size : [0.3, 0.3],
+    ori : 0, pos : [0, 0], size : [0.15, 0.15],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -355,7 +356,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_4', units : undefined, 
     image : 'F.png', mask : undefined,
-    ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
+    ori : 0, pos : [(- 0.1), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -368,10 +369,19 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_8', units : undefined, 
     image : 'M.png', mask : undefined,
-    ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
+    ori : 0, pos : [0.1, 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : -2.0 
+  });
+  fix_gender_task = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'fix_gender_task', units : undefined, 
+    image : 'fixation.png', mask : undefined,
+    ori : 0, pos : [0, 0], size : [0.2, 0.2],
+    color : new util.Color([1, 1, 1]), opacity : 1,
+    flipHoriz : false, flipVert : false,
+    texRes : 128, interpolate : true, depth : -3.0 
   });
   // Initialize components for Routine "start"
   startClock = new util.Clock();
@@ -394,7 +404,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image', units : 'height', 
     image : undefined, mask : undefined,
-    ori : 0, pos : [0, 0], size : [0.3, 0.3],
+    ori : 0, pos : [0, 0], size : [0.15, 0.15],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -421,7 +431,7 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_4', units : undefined, 
     image : 'F.png', mask : undefined,
-    ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
+    ori : 0, pos : [(- 0.1), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
@@ -434,10 +444,19 @@ function experimentInit() {
     win : psychoJS.window,
     name : 'image_8', units : undefined, 
     image : 'M.png', mask : undefined,
-    ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
+    ori : 0, pos : [0.1, 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : -2.0 
+  });
+  fix_gender_task = new visual.ImageStim({
+    win : psychoJS.window,
+    name : 'fix_gender_task', units : undefined, 
+    image : 'fixation.png', mask : undefined,
+    ori : 0, pos : [0, 0], size : [0.2, 0.2],
+    color : new util.Color([1, 1, 1]), opacity : 1,
+    flipHoriz : false, flipVert : false,
+    texRes : 128, interpolate : true, depth : -3.0 
   });
   // Initialize components for Routine "Pause_1"
   Pause_1Clock = new util.Clock();
@@ -1607,6 +1626,7 @@ function backtocenterRoutineBegin(trials) {
     backtocenterComponents.push(image_4);
     backtocenterComponents.push(mouse_4);
     backtocenterComponents.push(image_8);
+    backtocenterComponents.push(fix_gender_task);
     
     backtocenterComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -1672,6 +1692,16 @@ function backtocenterRoutineEachFrame(trials) {
       image_8.frameNStart = frameN;  // exact frame index
       
       image_8.setAutoDraw(true);
+    }
+
+    
+    // *fix_gender_task* updates
+    if (t >= 0.0 && fix_gender_task.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      fix_gender_task.tStart = t;  // (not accounting for frame time here)
+      fix_gender_task.frameNStart = frameN;  // exact frame index
+      
+      fix_gender_task.setAutoDraw(true);
     }
 
     // check if the Routine should terminate
