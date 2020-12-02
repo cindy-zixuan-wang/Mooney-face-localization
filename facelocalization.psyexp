@@ -741,7 +741,7 @@
       </CodeComponent>
     </Routine>
     <Routine name="backtocenter">
-      <ImageComponent name="image_4">
+      <ImageComponent name="F">
         <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
@@ -751,7 +751,7 @@
         <Param name="image" updates="constant" val="F.png" valType="str"/>
         <Param name="interpolate" updates="constant" val="linear" valType="str"/>
         <Param name="mask" updates="constant" val="None" valType="str"/>
-        <Param name="name" updates="None" val="image_4" valType="code"/>
+        <Param name="name" updates="None" val="F" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(-0.15, 0)" valType="code"/>
@@ -766,12 +766,12 @@
         <Param name="texture resolution" updates="constant" val="128" valType="code"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
       </ImageComponent>
-      <MouseComponent name="mouse_4">
-        <Param name="clickable" updates="constant" val="image_4,image_8" valType="code"/>
+      <MouseComponent name="mouse_gender_task">
+        <Param name="clickable" updates="constant" val="F,M" valType="code"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="forceEndRoutineOnPress" updates="constant" val="valid click" valType="str"/>
-        <Param name="name" updates="None" val="mouse_4" valType="code"/>
+        <Param name="name" updates="None" val="mouse_gender_task" valType="code"/>
         <Param name="newClicksOnly" updates="constant" val="True" valType="bool"/>
         <Param name="saveMouseState" updates="None" val="final" valType="str"/>
         <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
@@ -782,9 +782,9 @@
         <Param name="stopType" updates="None" val="frame N" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
-        <Param name="timeRelativeTo" updates="constant" val="routine" valType="str"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
       </MouseComponent>
-      <ImageComponent name="image_8">
+      <ImageComponent name="M">
         <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="disabled" updates="None" val="False" valType="bool"/>
@@ -794,7 +794,7 @@
         <Param name="image" updates="constant" val="M.png" valType="str"/>
         <Param name="interpolate" updates="constant" val="linear" valType="str"/>
         <Param name="mask" updates="constant" val="None" valType="str"/>
-        <Param name="name" updates="None" val="image_8" valType="code"/>
+        <Param name="name" updates="None" val="M" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(0.15, 0)" valType="code"/>
@@ -1022,7 +1022,7 @@
         <Param name="Begin JS Experiment" updates="constant" val="//function fillArray(origArr, len) {&amp;#10;//  var arr = [];&amp;#10;//  for (var i = 0; i &lt; len; i++) {&amp;#10;//    for (var j = 0; j &lt; origArr.length; j++) {&amp;#10;//        arr.push(origArr[j]);&amp;#10;//    }&amp;#10;//  }&amp;#10;//  return arr;&amp;#10;//}&amp;#10;//&amp;#10;//function shuffleArray(array) {&amp;#10;//    for (var i = array.length - 1; i &gt; 0; i--) {&amp;#10;//        var j = Math.floor(Math.random() * (i + 1));&amp;#10;//        var temp = array[i];&amp;#10;//        array[i] = array[j];&amp;#10;//        array[j] = temp;&amp;#10;//    }&amp;#10;//}&amp;#10;&amp;#10;//upright-low-female: 1-4;&amp;#10;//upright-low-male: 5-8;&amp;#10;//upright-high-female: 9-12;&amp;#10;//upright-high-male: 13-16;&amp;#10;//invert-low-female: 17-20;&amp;#10;//invert-low-male: 21-24;&amp;#10;//invert-high-female: 25-28;&amp;#10;//invert-high-male: 29-32;&amp;#10;&amp;#10;//var uniqCond = [1,2,3,4,5,6,7,8];&amp;#10;//var rep = 2*48;&amp;#10;//var allTrials = fillArray(uniqCond,rep);&amp;#10;//shuffleArray(allTrials);&amp;#10;&amp;#10;window.trialCount = 0&amp;#10;window.runCount = 0;" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>

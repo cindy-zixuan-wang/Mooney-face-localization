@@ -1617,7 +1617,6 @@ function backtocenterRoutineBegin(trials) {
     // setup some python lists for storing info about the mouse_4
     mouse_4.clicked_name = [];
     gotValidClick = false; // until a click is received
-    mouse_4.mouseClock.reset();
     // keep track of which components have finished
     backtocenterComponents = [];
     backtocenterComponents.push(image_4);
@@ -1659,6 +1658,7 @@ function backtocenterRoutineEachFrame(trials) {
       mouse_4.frameNStart = frameN;  // exact frame index
       
       mouse_4.status = PsychoJS.Status.STARTED;
+      mouse_4.mouseClock.reset();
       prevButtonState = mouse_4.getPressed();  // if button is down already this ISN'T a new click
       }
     if (mouse_4.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
