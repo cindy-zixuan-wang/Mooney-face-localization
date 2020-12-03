@@ -141,9 +141,9 @@ var image_2;
 var mouse_2;
 var image_5;
 var backtocenterClock;
-var image_4;
-var mouse_4;
-var image_8;
+var F;
+var mouse_gender_task;
+var M;
 var fix_gender_task;
 var startClock;
 var text_8;
@@ -360,22 +360,22 @@ function experimentInit() {
   });
   // Initialize components for Routine "backtocenter"
   backtocenterClock = new util.Clock();
-  image_4 = new visual.ImageStim({
+  F = new visual.ImageStim({
     win : psychoJS.window,
-    name : 'image_4', units : undefined, 
+    name : 'F', units : undefined, 
     image : 'F.png', mask : undefined,
     ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
   });
-  mouse_4 = new core.Mouse({
+  mouse_gender_task = new core.Mouse({
     win: psychoJS.window,
   });
-  mouse_4.mouseClock = new util.Clock();
-  image_8 = new visual.ImageStim({
+  mouse_gender_task.mouseClock = new util.Clock();
+  M = new visual.ImageStim({
     win : psychoJS.window,
-    name : 'image_8', units : undefined, 
+    name : 'M', units : undefined, 
     image : 'M.png', mask : undefined,
     ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
@@ -435,22 +435,22 @@ function experimentInit() {
   
   // Initialize components for Routine "backtocenter"
   backtocenterClock = new util.Clock();
-  image_4 = new visual.ImageStim({
+  F = new visual.ImageStim({
     win : psychoJS.window,
-    name : 'image_4', units : undefined, 
+    name : 'F', units : undefined, 
     image : 'F.png', mask : undefined,
     ori : 0, pos : [(- 0.15), 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
     flipHoriz : false, flipVert : false,
     texRes : 128, interpolate : true, depth : 0.0 
   });
-  mouse_4 = new core.Mouse({
+  mouse_gender_task = new core.Mouse({
     win: psychoJS.window,
   });
-  mouse_4.mouseClock = new util.Clock();
-  image_8 = new visual.ImageStim({
+  mouse_gender_task.mouseClock = new util.Clock();
+  M = new visual.ImageStim({
     win : psychoJS.window,
-    name : 'image_8', units : undefined, 
+    name : 'M', units : undefined, 
     image : 'M.png', mask : undefined,
     ori : 0, pos : [0.15, 0], size : [0.1, 0.1],
     color : new util.Color([1, 1, 1]), opacity : 1,
@@ -1614,14 +1614,21 @@ function backtocenterRoutineBegin(trials) {
     backtocenterClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    // setup some python lists for storing info about the mouse_4
-    mouse_4.clicked_name = [];
+    // setup some python lists for storing info about the mouse_gender_task
+    // current position of the mouse:
+    mouse_gender_task.x = [];
+    mouse_gender_task.y = [];
+    mouse_gender_task.leftButton = [];
+    mouse_gender_task.midButton = [];
+    mouse_gender_task.rightButton = [];
+    mouse_gender_task.time = [];
+    mouse_gender_task.clicked_name = [];
     gotValidClick = false; // until a click is received
     // keep track of which components have finished
     backtocenterComponents = [];
-    backtocenterComponents.push(image_4);
-    backtocenterComponents.push(mouse_4);
-    backtocenterComponents.push(image_8);
+    backtocenterComponents.push(F);
+    backtocenterComponents.push(mouse_gender_task);
+    backtocenterComponents.push(M);
     backtocenterComponents.push(fix_gender_task);
     
     for (const thisComponent of backtocenterComponents)
@@ -1642,36 +1649,43 @@ function backtocenterRoutineEachFrame(trials) {
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
     
-    // *image_4* updates
-    if (frameN >= 0.0 && image_4.status === PsychoJS.Status.NOT_STARTED) {
+    // *F* updates
+    if (frameN >= 0.0 && F.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      image_4.tStart = t;  // (not accounting for frame time here)
-      image_4.frameNStart = frameN;  // exact frame index
+      F.tStart = t;  // (not accounting for frame time here)
+      F.frameNStart = frameN;  // exact frame index
       
-      image_4.setAutoDraw(true);
+      F.setAutoDraw(true);
     }
 
-    // *mouse_4* updates
-    if (frameN >= 0.0 && mouse_4.status === PsychoJS.Status.NOT_STARTED) {
+    // *mouse_gender_task* updates
+    if (frameN >= 0.0 && mouse_gender_task.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      mouse_4.tStart = t;  // (not accounting for frame time here)
-      mouse_4.frameNStart = frameN;  // exact frame index
+      mouse_gender_task.tStart = t;  // (not accounting for frame time here)
+      mouse_gender_task.frameNStart = frameN;  // exact frame index
       
-      mouse_4.status = PsychoJS.Status.STARTED;
-      mouse_4.mouseClock.reset();
-      prevButtonState = mouse_4.getPressed();  // if button is down already this ISN'T a new click
+      mouse_gender_task.status = PsychoJS.Status.STARTED;
+      mouse_gender_task.mouseClock.reset();
+      prevButtonState = mouse_gender_task.getPressed();  // if button is down already this ISN'T a new click
       }
-    if (mouse_4.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
-      let buttons = mouse_4.getPressed();
+    if (mouse_gender_task.status === PsychoJS.Status.STARTED) {  // only update if started and not finished!
+      let buttons = mouse_gender_task.getPressed();
       if (!buttons.every( (e,i,) => (e == prevButtonState[i]) )) { // button state changed?
         prevButtonState = buttons;
         if (buttons.reduce( (e, acc) => (e+acc) ) > 0) { // state changed to a new click
+          const xys = mouse_gender_task.getPos();
+          mouse_gender_task.x.push(xys[0]);
+          mouse_gender_task.y.push(xys[1]);
+          mouse_gender_task.leftButton.push(buttons[0]);
+          mouse_gender_task.midButton.push(buttons[1]);
+          mouse_gender_task.rightButton.push(buttons[2]);
+          mouse_gender_task.time.push(mouse_gender_task.mouseClock.getTime());
           // check if the mouse was inside our 'clickable' objects
           gotValidClick = false;
-          for (const obj of [image_4,image_8]) {
-            if (obj.contains(mouse_4)) {
+          for (const obj of [F,M]) {
+            if (obj.contains(mouse_gender_task)) {
               gotValidClick = true;
-              mouse_4.clicked_name.push(obj.name)
+              mouse_gender_task.clicked_name.push(obj.name)
             }
           }
           if (gotValidClick === true) { // abort routine on response
@@ -1681,13 +1695,13 @@ function backtocenterRoutineEachFrame(trials) {
       }
     }
     
-    // *image_8* updates
-    if (t >= 0.0 && image_8.status === PsychoJS.Status.NOT_STARTED) {
+    // *M* updates
+    if (t >= 0.0 && M.status === PsychoJS.Status.NOT_STARTED) {
       // keep track of start time/frame for later
-      image_8.tStart = t;  // (not accounting for frame time here)
-      image_8.frameNStart = frameN;  // exact frame index
+      M.tStart = t;  // (not accounting for frame time here)
+      M.frameNStart = frameN;  // exact frame index
       
-      image_8.setAutoDraw(true);
+      M.setAutoDraw(true);
     }
 
     
@@ -1731,15 +1745,14 @@ function backtocenterRoutineEnd(trials) {
       }
     }
     // store data for thisExp (ExperimentHandler)
-    const xys = mouse_4.getPos();
-    const buttons = mouse_4.getPressed();
-    psychoJS.experiment.addData('mouse_4.x', xys[0]);
-    psychoJS.experiment.addData('mouse_4.y', xys[1]);
-    psychoJS.experiment.addData('mouse_4.leftButton', buttons[0]);
-    psychoJS.experiment.addData('mouse_4.midButton', buttons[1]);
-    psychoJS.experiment.addData('mouse_4.rightButton', buttons[2]);
-    if (mouse_4.clicked_name.length > 0) {
-      psychoJS.experiment.addData('mouse_4.clicked_name', mouse_4.clicked_name[0]);}
+    if (mouse_gender_task.x) {  psychoJS.experiment.addData('mouse_gender_task.x', mouse_gender_task.x[0])};
+    if (mouse_gender_task.y) {  psychoJS.experiment.addData('mouse_gender_task.y', mouse_gender_task.y[0])};
+    if (mouse_gender_task.leftButton) {  psychoJS.experiment.addData('mouse_gender_task.leftButton', mouse_gender_task.leftButton[0])};
+    if (mouse_gender_task.midButton) {  psychoJS.experiment.addData('mouse_gender_task.midButton', mouse_gender_task.midButton[0])};
+    if (mouse_gender_task.rightButton) {  psychoJS.experiment.addData('mouse_gender_task.rightButton', mouse_gender_task.rightButton[0])};
+    if (mouse_gender_task.time) {  psychoJS.experiment.addData('mouse_gender_task.time', mouse_gender_task.time[0])};
+    if (mouse_gender_task.clicked_name) {  psychoJS.experiment.addData('mouse_gender_task.clicked_name', mouse_gender_task.clicked_name[0])};
+    
     // the Routine "backtocenter" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     

@@ -773,7 +773,7 @@
         <Param name="forceEndRoutineOnPress" updates="constant" val="valid click" valType="str"/>
         <Param name="name" updates="None" val="mouse_gender_task" valType="code"/>
         <Param name="newClicksOnly" updates="constant" val="True" valType="bool"/>
-        <Param name="saveMouseState" updates="None" val="final" valType="str"/>
+        <Param name="saveMouseState" updates="None" val="on click" valType="str"/>
         <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
         <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
