@@ -256,7 +256,7 @@ function experimentInit() {
   text_3 = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_3',
-    text: 'You will see a circular target appearing on the screen very briefly. Magic letter: m\n\n(Press the spacebar to proceed)\n\n',
+    text: '\nYou will see a face appearing on the screen very briefly. Magic letter: m\n\n(Press the spacebar to proceed)\n\n',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0,
@@ -271,7 +271,7 @@ function experimentInit() {
   text_4 = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_4',
-    text: 'Your task is to move your cursor to click the center of the target after it disappears. \n\nPlease try to remain fixated on the “+” while you adjust the cursor.\n\n(Press the spacebar to proceed)\n',
+    text: 'Your task is to move your cursor and click on the center of the face after it disappears. \n\nPlease try to remain fixated on the “+” while you adjust the cursor.\n\n(Press the spacebar to proceed)\n',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0,
