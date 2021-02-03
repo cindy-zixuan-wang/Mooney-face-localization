@@ -294,7 +294,7 @@ function experimentInit() {
   text_7 = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_7',
-    text: 'After clicking on the location of the target, a "F" and a "M" icon will appear in the center of the screan. Click on either to identify the sex of the target. This will also start the next trial. \n\n(Press the spacebar to proceed)\n',
+    text: 'After clicking, you will see letter "F" and "M" on your screen, and please click on either to identify the gender of the face you just saw (F: Female, M: Male). This will also start the next trial. \nNote that the face could be sometimes presented upside down. If you are unsure about the gender, please try your best to guess.\n\n(Press the spacebar to proceed)\n',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.05,  wrapWidth: undefined, ori: 0,
@@ -309,7 +309,7 @@ function experimentInit() {
   text_5 = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_5',
-    text: 'Please enter the magic letter on the keyboard to continue.\nOtherwise, please reread the following instruction carefully to find the magic letter.\n \nIn this experiment, you need to fixate on the “+” at the center of your screen at ALL TIMES.\nYou will see a circular target appearing on the screen very briefly. Magic letter: m.\nYour task is to move your cursor to indicate the center of the target after it disappears.\nAfter clicking the location of the target, a "F" and a "M" icon will appear in the center of the screan. Click on either to identify the sex of the target. This will also start the next trial.\n',
+    text: 'Please enter the magic letter on the keyboard to continue.\nOtherwise, please reread the following instruction carefully to find the magic letter.\n \nIn this experiment, you need to fixate on the “+” at the center of your screen at ALL TIMES.\nYou will see a circular target appearing on the screen very briefly. Magic letter: m.\nYour task is to move your cursor to indicate the center of the target after it disappears.\nAfter clicking, you will see letter "F" and "M" on your screen, and please click on either to identify the gender of the face you just saw (F: Female, M: Male). This will also start the next trial.\nNote that the face could be sometimes presented upside down. If you are unsure about the gender, please try your best to guess.\n',
     font: 'Arial',
     units: undefined, 
     pos: [0, 0], height: 0.04,  wrapWidth: undefined, ori: 0,
